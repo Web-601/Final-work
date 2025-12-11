@@ -1,1 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Year - Магазин новогодних игрушек</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <div class="logo-icon"><i class="fas fa-year"></i></div>
+                        <div class="logo-text"><spen>New</spen><span>Year</span></div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#home">Главная</a></li>
+                            <li><a href="#categories">Каталог</a></li>
+                            <li><a href="#products">Популярные товары</a></li>
+                            <li><a href="#benefits">Преимущества</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <input type="text" placeholder="Выбор новогодних игрушек...">
+                            <button><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <div class="cart-count">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
+        <!-- Модальное окно корзины -->
+        <div class="cart-modal-overlay" id="cartModal">
+            <div class="cart-modal">
+                <div class="cart-header">
+                    <h2 class="cart-title">Ваша корзина</h2>
+                    <button class="close-cart" id="closeCart">&times;</button>
+                </div>                
+                <div class="cart-items" id="cartItemsContainer">
+                    
+                    <!-- Товары будут добавляться сюда динамически -->
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="https://www.ofsi.ru/upload/medialibrary/178/miganie.gif" alt="Гирлянда">
+                        </div>
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">Новогодняя гирлянда</h3>
+                            <p class="cart-item-price">613 ₽</p>
+                            <div class="cart-item-actions">
+                                <div class="quantity-control">
+                                    <button class="quantity-btn decrease-qty">-</button>
+                                    <input type="text" class="quantity-input" value="1" readonly>
+                                    <button class="quantity-btn increase-qty">+</button>
+                                </div>
+                                <button class="remove-item">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="https://basket-10.wbbasket.ru/vol1467/part146794/146794344/images/big/8.webp" alt="Игрушка из Папье-Маше">
+                        </div>
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">Ватная ёлочная игрушка</h3>
+                            <p class="cart-item-price">3 755 ₽</p>
+                            <div class="cart-item-actions">
+                                <div class="quantity-control">
+                                    <button class="quantity-btn decrease-qty">-</button>
+                                    <input type="text" class="quantity-input" value="2" readonly>
+                                    <button class="quantity-btn increase-qty">+</button>
+                                </div>
+                                <button class="remove-item">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="cart-totals">
+                        <div class="total-row">
+                            <span class="total-label">Товары</span>
+                            <span class="total-value">0 ₽</span> <!-- временно -->
+                        </div>
+                        <div class="total-row">
+                            <span class="total-label">Доставка</span>
+                            <span class="total-value">0 ₽</span> <!-- временно -->
+                        </div>
+                        <div class="total-row cart-total">
+                            <span class="total-label">Итого</span>
+                            <span class="total-value">0 ₽</span> <!-- временно -->
+                        </div>
+                    </div>
+                    
+                    <div class="cart-actions">
+                        <button class="btn">Перейти к оформлению</button>
+                        <button class="btn btn-secondary" id="continueShopping">Продолжить покупки</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Новогодние игрушки на любой вкус</h1>
+                <p>Широкий ассортимент новогодних товаров включает в себя всё необходимое для праздника: от красочных гирлянд, открыток с теплыми поздравлениями и подарочной упаковки до ярких фейерверков и уникальных елочных игрушек. 
+                    Все эти предметы помогут создать волшебную атмосферу и сделать Новый год по-настоящему незабываемым с гарантией качества и быстрой доставкой по всей территории России.</p>
+                <a href="#categories" class="btn">Перейти к каталогу</a>
+            </div>
+        </section>
+
+        <!-- Блок 1: Категории -->
+        <section class="section" id="categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Каталог Новогодних игрушек</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas Garland"></i>
+                        </div>
+                        <h3>Гирлянды</h3>
+                        <p>Гирлянда-нить/Линейная метражная,
+                            Гирлянда-бахрома,
+                            Гирлянда-занавес/Дождь,
+                            Гирлянда-сеть,
+                            Гирлянда Belt Light,
+                            Гирлянда "Роса",
+                            Гирлянда-фигура</p>
+
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas Packaging"></i>
+                        </div>
+                        <h3>Упаковка</h3>
+                        <p>Картонная и бумажная упаковка, 
+                            Металлическая (жестяная),
+                            Деревянная,
+                            Текстильная,
+                            Пластиковая/Полипропиленовая</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas Firework"></i>
+                        </div>
+                        <h3>Фейерверки</h3>
+                        <p>Батареи салютов (салютные установки), 
+                            Фонтаны, 
+                            Римские свечи,
+                            Ракеты, 
+                            Петарды, 
+                            Бенгальские огни и хлопушки</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas Handmade-toys"></i>
+                        </div>
+                        <h3>Игрушки ручной работы</h3>
+                        <p>Стекло/Фарфор,
+                            Вата и Папье-Маше,
+                            Текстиль,
+                            Дерево, 
+                            Полимерная глина/Пластик,
+                            Соленое тесто</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 2: Популярные товары -->
+        <section class="section" id="products">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Популярные товары</h2>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://www.ofsi.ru/upload/medialibrary/178/miganie.gif" alt="Гирлянда">
+                        </div>
+                        <div class="product-info">
+                            <h3>Новогодние гирлянды</h3>
+                            <p class="product-price">613 ₽</p>
+                            <div class="product-actions">
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <button class="btn add-to-cart" data-id="1" data-name="Новогодние гирлянды" data-price="613" data-image="Гирлянды.jpg">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://basket-10.wbbasket.ru/vol1467/part146794/146794344/images/big/8.webp" alt="Игрушка из Папье-Маше">
+                        </div>
+                        <div class="product-info">
+                            <h3>Ватная Ёлочная игрушка</h3>
+                            <p class="product-price">3 755 ₽</p>
+                            <div class="product-actions">
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <button class="btn add-to-cart" data-id="2" data-name="Ватная елочная игрушка" data-price="3755" data-image="Репка.jpg">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://pa1.aminoapps.com/9484/caa760c57e2d4a0fe19b40355dc5ad15074801c5r1-480-270_00.gif" alt="Фейерверк">
+                        </div>
+                        <div class="product-info">
+                            <h3>Фейерверк - Шары счастья (24 выстрела)</h3>
+                            <p class="product-price">4 990 ₽</p>
+                            <div class="product-actions">
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <button class="btn add-to-cart" data-id="3" data-name="Фейерверк Шары счастья (24 выстрела)" data-price="4990" data-image="Фейерверк.gif">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://media1.tenor.com/m/dAXovxwT5k0AAAAC/lekany-ny.gif" alt="Ручная работа">
+                        </div>
+                        <div class="product-info">
+                            <h3>Шары ручной работы</h3>
+                            <p class="product-price">2 950 ₽</p>
+                            <div class="product-actions">
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <button class="btn add-to-cart" data-id="4" data-name="Шары ручной работы" data-price="2950" data-image="Шары.gif">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 3: Преимущества -->
+        <section class="section benefits" id="benefits">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Почему делают Акцент на наш Магазин</h2>
+                    </div>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Гарантия качества</h3>
+                            <p>Все игрушки ручной работы, качественно упаковываются. Вся пиротехника прошла проверку в МЧС РФ и имеет гарантию от производителя.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h3>Быстрая доставка</h3>
+                            <p>Быстрая доставка по всей России от 1 дня, так как во многих городах имеются наши филиалы. Отпускается самовывозом из 75 пунктов выдачи.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>Консультации экспертов</h3>
+                            <p>Наши специалисты помогут подобрать любой товар из имеющегося ассортимента, проконсультируют, качественно упакуют и есле надо помогут в доставке.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <h3>Низкие цены</h3>
+                            <p>Мы являемся производителями половины имеющегося у нас ассортимента товара, и поэтому мы предлагаем лучшие цены.</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Блок 4: Как найти товар -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Как найти нужный товар</h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Найдите ближайший к Вам магазин</h3>
+                        <p>Укажите адрес где вы находитесь</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Выберите категорию</h3>
+                        <p>Перейдите в нужный раздел каталога с товаром магазина.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Выберите товар</h3>
+                        <p>Используйте фильтры для быстрого поиска нужного товара.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Оформите заказ</h3>
+                        <p>Добавьте товар в корзину и выберите способ доставки.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 5: Контакты -->
+        <section class="section contacts" id="contacts">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Контакты</h2>
+                </div>
+                <div class="contacts-content">
+                    <div class="contact-info">
+                        <h3>Наши контакты</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Адрес:</strong> г.Москва, пл.Новогодней Ёлки, д.9</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Телефон:</strong> 8 (800) 900-05-05</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Email:</strong> info@newyear.ru</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <p><strong>Режим работы:</strong> Пн-Пт: 8:00-20:00, Сб-Вс: 09:30-18:30</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Остались вопросы?</h3>
+                        <form>
+                            <input type="text" placeholder="Ваше имя" required>
+                            <input type="tel" placeholder="Телефон" required>
+                            <input type="email" placeholder="Email" required>
+                            <textarea placeholder="Ваш вопрос"></textarea>
+                            <button type="submit" class="btn">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>NewYear</h3>
+                        <p>Интернет-магазин Новогодних товаров с 2008 года. Товар от собственных производводителей, качество товара проверенно МЧС РФ.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-vk"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Категории</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Гирлянды и украшения</a></li>
+                            <li><a href="#">Игрушки на Ёлку ручной работы</a></li>
+                            <li><a href="#">Упаковочный материал</a></li>
+                            <li><a href="#">Открытки и плакаты</a></li>
+                            <li><a href="#">Фейерверки, Хлопушки, Петарды</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Полезные ссылки</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Доставка и оплата</a></li>
+                            <li><a href="#">Гарантия и возврат</a></li>
+                            <li><a href="#">Помощь в подборе</a></li>
+                            <li><a href="#">Эксклюзив</a></li>
+                            <li><a href="#">Акции и скидки</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Подписка на новости</h3>
+                        <p>Получайте первыми информацию о новых поступлениях и специальных предложениях.</p>
+                        <div class="search-box">
+                            <input type="email" placeholder="Ваш email">
+                            <button><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 NewYear. Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="index.js"></script>
+    </body>
+</html>
